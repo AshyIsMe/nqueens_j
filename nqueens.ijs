@@ -21,8 +21,8 @@ NB. queen edges, queen placed on node x of y*y grid reaches these edges
 b=.i. 2$y
 r=.x row b
 c=.x row |:b
-d=.x diag b
-edges=.r,c,d
+d=.x diag y
+edges=.~.,r,c,d
 }} 
 
 qstep=: dyad define
