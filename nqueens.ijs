@@ -5,14 +5,15 @@ am=: {{ (2$*:y) $ 0 }}
 deg=: +/"1
 an=:{{I.0=deg y}} NB. Available nodes. No queens on or attacking these nodes.
 row=:{{y#~x e."1 y}}
-n2i=:{{ (<.x%y), y|x }} NB. node to index
+n2i=:{{ (<.x%y), y|x }}"0 NB. node to index
 i2n=:{{ (y*{.x) + {:x }}"1 NB. index to node
 
+NB. TODO: Still broken for x on edges
 diag=:{{
 NB. return diagonal edges from node x on a y*y sized board
 bl=.(#~ [: *./"1 >:&0) (x n2i y) -"1 (|.i:y) ,. i:y NB. bottom-left to top-right
 tl=.(#~ [: *./"1 >:&0*.<&y) (x n2i y) -"1 ,.~ i:y NB. top-left to bottom-right
-(bl,tl) i2n y
+(~.bl,tl) i2n y
 }}
 
 qe=:{{
