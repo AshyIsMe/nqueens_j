@@ -22,8 +22,8 @@ b=.i. 2$y
 r=.x row b
 c=.x row |:b
 d=.x diag y
-edges=.~.,r,c,d
-}} 
+edges=.~.(,r),(,c),(,d)
+}}
 
 qstep=: dyad define
 NB. x is current queens list in queensw form
